@@ -3,8 +3,14 @@ from localization import Localization
 
 
 class Buttons(StrEnum):
-    SECTION_PERSONAL = Localization.PERSONAL_ACCOUNT_BUTTON
-    SECTION_MASTERCLASSES = Localization.MASTERCLASSES_BUTTON
-    SECTION_VIDEOCOURSES = Localization.VIDEOCOURSES_BUTTON
-    SECTION_PATTERNS = Localization.PATTERNS_BUTTON
-    SECTION_SUPPORT = Localization.SUPPORT_BUTTON
+    section_personal = Localization.section_personal_button
+    section_masterclasses = Localization.section_masterclasses_button
+    section_videocourses = Localization.section_videocourses_button
+    section_patterns = Localization.section_patterns_button
+    section_support = Localization.section_support_button
+
+
+class Section(StrEnum):
+    masterclasses = "masterclasses"
+    videocourses = "videocourses"
+    patterns = "patterns"
