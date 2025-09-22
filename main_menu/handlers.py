@@ -29,7 +29,9 @@ async def start_handler(message: Message):
     )
 
 
-@main_menu_router.callback_query(F.data.in_([f"section_{s}" for s in Section]))
+@main_menu_router.callback_query(
+    F.data.in_([f"section_{s}" for s in Section if s != "support"])
+)
 async def main_menu_callback(callback: CallbackQuery):
     await safe_answer_callback(callback)
 

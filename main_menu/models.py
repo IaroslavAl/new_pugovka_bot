@@ -14,3 +14,4 @@ class Section(StrEnum):
     masterclasses = "masterclasses"
     videocourses = "videocourses"
     patterns = "patterns"
+    support = "support"
