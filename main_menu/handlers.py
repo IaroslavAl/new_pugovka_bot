@@ -8,6 +8,7 @@ from content_section.service import ContentService
 from content_section.keyboards import category_keyboard
 from content_section.data import masterclasses, videocourses, patterns
 from localization import Localization
+from utils import safe_answer_callback
 
 main_menu_router = Router()
 menu_service = MenuService()
@@ -30,7 +31,7 @@ async def start_handler(message: Message):
 
 @main_menu_router.callback_query(F.data.in_([f"section_{s}" for s in Section]))
 async def main_menu_callback(callback: CallbackQuery):
-    await callback.answer()
+    await safe_answer_callback(callback)
 
     section_type = callback.data.replace("section_", "")
     service = services[Section(section_type)]
